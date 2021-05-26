@@ -1,3 +1,7 @@
+# K Url Preview
+
 ## 0.0.1
 
-* TODO: Describe initial release.
+- vertical preview
+
+- custom preview
