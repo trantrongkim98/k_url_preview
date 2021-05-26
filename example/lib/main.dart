@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:kurlpreview_example/http_config.dart';
 import 'package:kurlpreview/src/ui/k_url_preview_custom.dart';
+
 void main() {
   HttpOverrides.global = MyHttpOverrides();
   runApp(MyApp());
@@ -97,7 +98,7 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text('Plugin example app'),
           ),
-          backgroundColor:  Colors.black,
+          backgroundColor: Colors.black,
           body: Container(
             alignment: Alignment.center,
             child: LayoutBuilder(
@@ -106,9 +107,7 @@ class _MyAppState extends State<MyApp> {
                   borderRadius: BorderRadius.circular(16),
                   child: Container(
                     color: Colors.grey[900],
-                    child:
-
-                    KUrlPreview(
+                    child: KUrlPreview(
                       'https://pub.dev/packages/expandable_text',
                       type: KUrlPreviewLayoutType.column,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,35 +119,35 @@ class _MyAppState extends State<MyApp> {
                       imagePadding: EdgeInsets.only(bottom: 8),
                       imageConstraints: BoxConstraints(
                         maxHeight: 100,
-                        minWidth: MediaQuery.of(ctx).size.width ,
+                        minWidth: MediaQuery.of(ctx).size.width,
                       ),
                       items: [
                         KUrlPreviewItem(
-                          type: KUrlPreviewItemType.title,
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                            padding: EdgeInsets.only(bottom: 8,left:8,right:8)
-                        ),
+                            type: KUrlPreviewItemType.title,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                            padding:
+                                EdgeInsets.only(bottom: 8, left: 8, right: 8)),
                         KUrlPreviewItem(
-                          type: KUrlPreviewItemType.description,
-                          style: TextStyle(
-                              fontSize: 11,
-                              color: Colors.white70,
-                              fontWeight: FontWeight.w500),
-                            padding: EdgeInsets.only(bottom: 8,left:8,right:8)
-                        ),
+                            type: KUrlPreviewItemType.description,
+                            style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.white70,
+                                fontWeight: FontWeight.w500),
+                            padding:
+                                EdgeInsets.only(bottom: 8, left: 8, right: 8)),
                         KUrlPreviewItem(
-                          type: KUrlPreviewItemType.siteName,
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 9,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          padding: EdgeInsets.only(bottom: 8,left:8,right:8)
-                        ),
+                            type: KUrlPreviewItemType.siteName,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 9,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            padding:
+                                EdgeInsets.only(bottom: 8, left: 8, right: 8)),
                       ],
                     ),
                   ),

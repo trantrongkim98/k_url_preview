@@ -4,10 +4,10 @@ import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:kurlpreview/src/data/k_preview_meta.dart';
-import 'package:kurlpreview/src/http/http.dart';
-import 'package:kurlpreview/src/ui/k_preview_image.dart';
-import 'package:kurlpreview/src/ui/k_preview_text.dart';
+import 'package:k_url_preview/src/data/k_preview_meta.dart';
+import 'package:k_url_preview/src/http/http.dart';
+import 'package:k_url_preview/src/ui/k_preview_image.dart';
+import 'package:k_url_preview/src/ui/k_preview_text.dart';
 
 enum KUrlPreviewLayoutType { column, row }
 enum KUrlPreviewItemType { title, siteName, originalUrl, description }
@@ -36,18 +36,18 @@ class KUrlPreview extends StatefulWidget {
   final List<KUrlPreviewItem> items;
   final BoxConstraints imageConstraints;
   const KUrlPreview(
-      this.url, {
-        Key? key,
-        this.constraints = const BoxConstraints(),
-        this.imagePadding = EdgeInsets.zero,
-        this.type = KUrlPreviewLayoutType.column,
-        this.crossAxisAlignment = CrossAxisAlignment.center,
-        this.mainAxisAlignment = MainAxisAlignment.start,
-        this.maxAge = const Duration(days: 30),
-        this.imageConstraints = const BoxConstraints(),
-        this.cacheKey,
-        this.items = const <KUrlPreviewItem>[],
-      }) : super(key: key);
+    this.url, {
+    Key? key,
+    this.constraints = const BoxConstraints(),
+    this.imagePadding = EdgeInsets.zero,
+    this.type = KUrlPreviewLayoutType.column,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.maxAge = const Duration(days: 30),
+    this.imageConstraints = const BoxConstraints(),
+    this.cacheKey,
+    this.items = const <KUrlPreviewItem>[],
+  }) : super(key: key);
 
   @override
   _KUrlPreviewState createState() => _KUrlPreviewState();
@@ -119,7 +119,6 @@ class _KUrlPreviewState extends State<KUrlPreview>
   @override
   void didUpdateWidget(covariant KUrlPreview oldWidget) {
     if (widget.url != oldWidget.url) {
-
       _loadCache();
     } else if (widget.imagePadding != oldWidget.imagePadding ||
         widget.imageConstraints != oldWidget.imageConstraints ||
@@ -138,7 +137,7 @@ class _KUrlPreviewState extends State<KUrlPreview>
 
     if (!_isReloadedItem) {
       _isReloadedItem = true;
-      _items= [];
+      _items = [];
       widget.items.forEach((item) {
         switch (item.type) {
           case KUrlPreviewItemType.title:
@@ -212,12 +211,12 @@ class _KPreviewLayout extends StatelessWidget {
   final BoxConstraints imageConstraints;
   const _KPreviewLayout(this.meta,
       {Key? key,
-        this.imagePadding = EdgeInsets.zero,
-        this.type = KUrlPreviewLayoutType.column,
-        this.crossAxisAlignment = CrossAxisAlignment.center,
-        this.mainAxisAlignment = MainAxisAlignment.start,
-        this.imageConstraints = const BoxConstraints(),
-        this.items = const <Widget>[]})
+      this.imagePadding = EdgeInsets.zero,
+      this.type = KUrlPreviewLayoutType.column,
+      this.crossAxisAlignment = CrossAxisAlignment.center,
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      this.imageConstraints = const BoxConstraints(),
+      this.items = const <Widget>[]})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -261,7 +260,3 @@ class _KPreviewLayout extends StatelessWidget {
     }
   }
 }
-
-
-
-

@@ -1,11 +1,10 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
 import 'package:html/dom.dart';
-import 'package:kurlpreview/src/data/k_preview_meta.dart';
-import 'package:kurlpreview/src/util/html_util.dart';
-import 'package:kurlpreview/src/util/url_util.dart';
+import 'package:k_url_preview/src/data/k_preview_meta.dart';
+import 'package:k_url_preview/src/util/html_util.dart';
+import 'package:k_url_preview/src/util/url_util.dart';
 
 enum ContentType { html, json }
 
@@ -41,7 +40,8 @@ class NetworkHttp {
       'ec-fetch-mode': 'navigate',
       'upgrade-insecure-requests': '1',
       'sec-fetch-dest': 'document',
-    'Cookie': 'notice-ssb=1%3B1621959666590; prov=66ffb83f-4725-01f3-4a90-fda6052a0a58',
+      'Cookie':
+          'notice-ssb=1%3B1621959666590; prov=66ffb83f-4725-01f3-4a90-fda6052a0a58',
       'User-Agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
     });

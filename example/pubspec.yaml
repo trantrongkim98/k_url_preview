@@ -12,9 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  any_link_preview: ^2.0.0-rc
 
-  kurlpreview:
+  k_url_preview:
     # When depending on this package from a real application you should use:
     #   kurlpreview: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
