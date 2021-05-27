@@ -3,10 +3,10 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:k_url_preview/src/data/k_preview_meta.dart';
-import 'package:k_url_preview/src/http/http.dart';
-import 'package:k_url_preview/src/ui/k_preview_image.dart';
-import 'package:k_url_preview/src/ui/k_preview_text.dart';
+import 'package:kurlpreview/src/data/k_preview_meta.dart';
+import 'package:kurlpreview/src/http/http.dart';
+import 'package:kurlpreview/src/ui/k_preview_image.dart';
+import 'package:kurlpreview/src/ui/k_preview_text.dart';
 
 class KVerticalUrlPreview extends StatefulWidget {
   final String url;
@@ -20,6 +20,8 @@ class KVerticalUrlPreview extends StatefulWidget {
   final EdgeInsets paddingDescription;
   final TextStyle? siteNameStyle;
   final EdgeInsets paddingSiteName;
+  final Function(KPreviewMetaData)? onBuildDone;
+  final KPreviewMetaData? meta;
 
   const KVerticalUrlPreview(
     this.url, {
@@ -47,6 +49,8 @@ class KVerticalUrlPreview extends StatefulWidget {
     ),
     this.paddingSiteName = const EdgeInsets.only(bottom: 8, left: 8, right: 8),
     this.maxAge = const Duration(days: 1),
+        this.meta,
+        this.onBuildDone,
   }) : super(key: key);
 
   @override
@@ -58,6 +62,9 @@ class _KVerticalUrlPreviewState extends State<KVerticalUrlPreview> {
   final _cacheManager = DefaultCacheManager();
   @override
   void initState() {
+    if(widget.meta!=null){
+      _meta = widget.meta;
+    }
     _loadCache();
     super.initState();
   }
@@ -83,6 +90,9 @@ class _KVerticalUrlPreviewState extends State<KVerticalUrlPreview> {
         setState(() {
           _meta = KPreviewMetaData.fromJSon(map);
         });
+      }
+      if(widget.onBuildDone!=null && _meta!=null){
+        widget.onBuildDone!(_meta);
       }
     }
   }

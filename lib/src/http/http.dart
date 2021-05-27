@@ -2,9 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
 import 'package:html/dom.dart';
-import 'package:k_url_preview/src/data/k_preview_meta.dart';
-import 'package:k_url_preview/src/util/html_util.dart';
-import 'package:k_url_preview/src/util/url_util.dart';
+import 'package:kurlpreview/src/data/k_preview_meta.dart';
+import 'package:kurlpreview/src/util/html_util.dart';
+import 'package:kurlpreview/src/util/url_util.dart';
 
 enum ContentType { html, json }
 

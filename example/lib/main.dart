@@ -154,61 +154,7 @@ class _MyAppState extends State<MyApp> {
                 );
               },
             ),
-          )
-          // body: ListView.builder(
-          //     itemCount: list.length,
-          //     itemBuilder: (ctx, index) {
-          //       if (list[index].isNotEmpty) {
-          //         return Container(
-          //           color: Colors.black,
-          //           alignment: Alignment.centerLeft,
-          //           child: Container(
-          //             decoration: BoxDecoration(color: Colors.grey),
-          //             child: KUrlPreview(
-          //               list[index],
-          //               type: KUrlPreviewLayoutType.column,
-          //               crossAxisAlignment: CrossAxisAlignment.start,
-          //               mainAxisAlignment: MainAxisAlignment.start,
-          //               constraints: BoxConstraints(
-          //                 maxWidth: MediaQuery.of(ctx).size.width * 0.5,
-          //                 // maxHeight: MediaQuery.of(ctx).size.height*0.3
-          //               ),
-          //               items: [
-          //                 KUrlPreviewItem(
-          //                   type: KUrlPreviewItemType.title,
-          //                   style: TextStyle(
-          //                     fontSize: 14,
-          //                     fontWeight: FontWeight.bold,
-          //                     color: Colors.white,
-          //                   ),
-          //                 ),
-          //                 KUrlPreviewItem(
-          //                   type: KUrlPreviewItemType.description,
-          //                   style: TextStyle(
-          //                       fontSize: 11,
-          //                       color: Colors.white70,
-          //                       fontWeight: FontWeight.w500),
-          //                 ),
-          //                 KUrlPreviewItem(
-          //                   type: KUrlPreviewItemType.siteName,
-          //                   style: TextStyle(color: Colors.white),
-          //                 ),
-          //               ],
-          //             ),
-          //           ),
-          //         );
-          //       }
-          //       Color color = Colors.yellow;
-          //       if (index % 2 == 0) {
-          //         color = Colors.red;
-          //       }
-          //       return Container(
-          //         height: 220,
-          //         width: MediaQuery.of(ctx).size.width,
-          //         color: color,
-          //       );
-          //     }),
-          ),
+          )),
     );
   }
 }

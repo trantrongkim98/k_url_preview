@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
 
 
-  k_url_preview:
+  kurlpreview:
     # When depending on this package from a real application you should use:
     #   kurlpreview: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints

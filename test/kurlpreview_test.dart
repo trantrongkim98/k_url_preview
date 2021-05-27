@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:k_url_preview/src/data/k_preview_meta.dart';
-import 'package:k_url_preview/src/http/http.dart';
+import 'package:kurlpreview/src/data/k_preview_meta.dart';
+import 'package:kurlpreview/src/http/http.dart';
 
 void main() {
   group('[NetworkHttp] - ', () {
